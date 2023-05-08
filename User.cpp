@@ -12,13 +12,13 @@ namespace TSA
 		return name;
 	}
 
-	void User::printInfo()
+	/*void User::printInfo()
 	{
 		cout << "Info:\n";
 		cout << "Name: " << this->name << endl;
 		cout << "Last name: " << this->lastName << endl;
 		cout << "Age: " << this->age << endl;
 		cout << "Login: " << this->login << endl;
-	}
+	}*/
 
 }

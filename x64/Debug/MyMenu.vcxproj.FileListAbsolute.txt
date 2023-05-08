@@ -1,3 +1,4 @@
 C:\Users\zheny\source\repos\c#\MyMenu\x64\Debug\MyMenu.exe
 C:\Users\Karpova\Desktop\учебные приколы\2 семестр\вп\lab2 еще попытка\x64\Debug\MyMenu.exe
 C:\Users\Karpova\Desktop\учебные приколы\2 семестр\вп\lab2\x64\Debug\MyMenu.exe
+C:\Users\Karpova\Desktop\учебные приколы\2 семестр\вп\lab3\x64\Debug\MyMenu.exe

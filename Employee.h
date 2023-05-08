@@ -8,17 +8,25 @@ namespace TSA
 {
 	class Employee : public User
 	{
-	protected:
+	private:
 		std::string job;
 
 	public:
+		Employee();
 		Employee(string, string, int, string, string, string);
 
 		string getName();
-		void printInfo();
 		
 		void setJob(string job);
 		string getJob();
+
+		bool operator<(Employee& employee);
+		bool operator>(Employee& employee);
+		bool operator==(Employee& employee);
+		bool operator!=(Employee& employee);
+
+		friend ostream& operator<<(ostream& out, Employee& employee);
+		friend istream& operator>>(istream& in, Employee& employee);
 	};
 
 }

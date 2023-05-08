@@ -20,7 +20,7 @@ namespace TSA {
 	public:
 		
 		virtual string getName() = 0;
-		virtual void printInfo() = 0;
+		//virtual void printInfo() = 0;
 	};
 
 }

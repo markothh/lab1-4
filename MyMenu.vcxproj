@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
-    <ClCompile Include="lab2.cpp" />
+    <ClCompile Include="lab3.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="MyMenu.cpp" />
     <ClCompile Include="MenuItem.cpp" />

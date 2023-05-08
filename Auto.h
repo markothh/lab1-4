@@ -6,7 +6,7 @@ using namespace std;
 namespace TSA
 {
 	class Auto {
-	protected:
+	private:
 		string mark;
 		double price;
 		int year;
@@ -16,7 +16,12 @@ namespace TSA
 	public:
 		Auto();
 		Auto(string, double, int, string, string);
+
+		friend ostream& operator<<(ostream& out, Auto automobile);
+		friend istream& operator>>(istream& in, Auto automobile);
+
 	};
+	
 
 
 }

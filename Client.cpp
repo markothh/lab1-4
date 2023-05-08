@@ -21,9 +21,54 @@ namespace TSA
 	{
 		return User::getName();
 	}
-	
-	void Client::printInfo()
+
+	bool Client::operator<(Client& client)
 	{
-		User::printInfo();
-	};
+		return this->lastName < client.lastName;
+	}
+
+	bool Client::operator>(Client& client)
+	{
+		return this->lastName > client.lastName;
+	}
+
+	bool Client::operator==(Client& client)
+	{
+		return this->name == client.name && this->lastName == client.lastName && this->login == client.login;
+	}
+
+	bool Client::operator!=(Client& client)
+	{
+		return !(this->name == client.name && this->lastName == client.lastName && this->login == client.login);
+	}
+
+	ostream& operator<<(ostream& out, Client& client)
+	{
+		out << "Name: " << client.name << endl;
+		out << "Last name: " << client.lastName << endl;
+		out << "Age: " << client.age << endl;
+		out << "Login: " << client.login << endl;
+		out << "Auto info:\n" << client.automobile;
+
+		return out;
+	}
+
+	istream& operator>>(istream& in, Client& client)
+	{
+		cout << "Name: ";
+		in >> client.name;
+		cout << "Last name: ";
+		in >> client.lastName;
+		cout << "Age: ";
+		in >> client.age;
+		cout << "Login: ";
+		in >> client.login;
+		cout << "Password: ";
+		in >> client.pass;
+		cout << "Auto info:" << endl;
+		in >> client.automobile;
+
+		return in;
+
+	}
 } 

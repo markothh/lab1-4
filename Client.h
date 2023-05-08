@@ -9,14 +9,21 @@ namespace TSA
 {	
 	class Client : public User
 	{
-	protected:
+	private:
 		Auto automobile;
 	public:
 		Client();
 		Client(string, string, int, string, string, Auto);
 
 		string getName();
-		void printInfo();
+
+		bool operator<(Client& client);
+		bool operator>(Client& client);
+		bool operator==(Client& client);
+		bool operator!=(Client& client);
+
+		friend ostream& operator<<(ostream& out, Client& client);
+		friend istream& operator>>(istream& in, Client& client);
 	};
 
 }
