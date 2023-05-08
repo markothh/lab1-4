@@ -40,15 +40,9 @@
     <Filter Include="Models\Containers">
       <UniqueIdentifier>{fcb69267-dc2d-4f87-a8e6-81f388f70aea}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Models\Containers\ClientVector">
-      <UniqueIdentifier>{f0365ef9-f85d-44c6-b604-316e718c387e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Models\Containers\EmployeeVector">
-      <UniqueIdentifier>{006fd9fa-4ed8-4708-a90b-fbaa7f81a5fd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lab4.cpp">
+    <ClCompile Include="lab5.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="User.cpp">
@@ -68,12 +62,6 @@
     </ClCompile>
     <ClCompile Include="MyMenu.cpp">
       <Filter>Models\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="ClientVector.cpp">
-      <Filter>Models\Containers\ClientVector</Filter>
-    </ClCompile>
-    <ClCompile Include="EmployeeVector.cpp">
-      <Filter>Models\Containers\EmployeeVector</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,11 +83,11 @@
     <ClInclude Include="MyMenu.h">
       <Filter>Models\Menu</Filter>
     </ClInclude>
-    <ClInclude Include="ClientVector.h">
-      <Filter>Models\Containers\ClientVector</Filter>
+    <ClInclude Include="Vector.h">
+      <Filter>Models\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="EmployeeVector.h">
-      <Filter>Models\Containers\EmployeeVector</Filter>
+    <ClInclude Include="Iterator.h">
+      <Filter>Models\Containers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
