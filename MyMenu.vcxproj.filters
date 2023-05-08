@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{39b3662a-beac-4052-8760-b6f1e8743dda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\User">
+      <UniqueIdentifier>{0a411bb5-cb65-4c67-9fbf-9d5eec8f4c07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Item">
+      <UniqueIdentifier>{1ee6be56-c453-4f01-b6e6-e60f62c05994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Menu">
+      <UniqueIdentifier>{a4b8c12a-f487-4b5f-8a56-37a23b097f8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Autosalon">
+      <UniqueIdentifier>{fe65321a-b5f3-4d8a-8d17-832e09090e9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Autosalon\Client">
+      <UniqueIdentifier>{0e313fbe-74c1-4bf9-ade5-bdad8ddcd69a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Autosalon\Employee">
+      <UniqueIdentifier>{862ba4ea-956b-4a15-bde1-056f8c06720e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\Autosalon\Auto">
+      <UniqueIdentifier>{69a1adc6-3e19-4a45-ac0e-c75b799f4022}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="lab2.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Models\User</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>Models\Autosalon\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Auto.cpp">
+      <Filter>Models\Autosalon\Auto</Filter>
+    </ClCompile>
+    <ClCompile Include="Employee.cpp">
+      <Filter>Models\Autosalon\Employee</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuItem.cpp">
+      <Filter>Models\Item</Filter>
+    </ClCompile>
+    <ClCompile Include="MyMenu.cpp">
+      <Filter>Models\Menu</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="User.h">
+      <Filter>Models\User</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Models\Autosalon\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="Auto.h">
+      <Filter>Models\Autosalon\Auto</Filter>
+    </ClInclude>
+    <ClInclude Include="Employee.h">
+      <Filter>Models\Autosalon\Employee</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuItem.h">
+      <Filter>Models\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMenu.h">
+      <Filter>Models\Menu</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
