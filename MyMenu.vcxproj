@@ -128,7 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
-    <ClCompile Include="lab3.cpp" />
+    <ClCompile Include="ClientVector.cpp" />
+    <ClCompile Include="EmployeeVector.cpp" />
+    <ClCompile Include="lab4.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="MyMenu.cpp" />
     <ClCompile Include="MenuItem.cpp" />
@@ -137,7 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
+    <ClInclude Include="ClientVector.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="EmployeeVector.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="MyMenu.h" />
     <ClInclude Include="Auto.h" />

@@ -1,30 +1,34 @@
 #include <iostream>
 #include "MyMenu.h"
-#include "Client.h"
-#include "Employee.h"
 #include "Auto.h"
+#include "ClientVector.h"
+#include "EmployeeVector.h"
 
 using namespace std;
 using namespace TSA;
 
 Auto* autos = new Auto[3]{ Auto("Ford", 1200000, 2003, "cool", "fast"), Auto("Lada", 2222222, 2010, "nice", "beautiful"), Auto("Nissan", 3603432, 2012, "gorgeous", "blue") };
 
-int clientCount = 3;
-Client* clients = new Client[5] {Client("Sonya", "Tarasova", 20, "markothh", "123123", autos[0]),
-								 Client("Andrey", "Gorelov", 23, "andrey", "321123", autos[1]),
-								 Client("Sergey", "Serov", 24, "sergey", "bjhjvgf", autos[2]) };
+ClientVector clients = ClientVector();
+EmployeeVector employees = EmployeeVector();
 
-int employeeCount = 3;
-Employee* employees = new Employee[5]{ Employee("Agata", "Belousova", 19, "agata", "irucm", "cashier"),
-									   Employee("Victor", "Ovsyannikov", 26, "victor", "ujvr", "top-manager"),
-									   Employee("Alisa", "Pavlova", 22, "alisa", "iuthmc", "manager")};
+void init()
+{
+	clients.Add(Client("Sonya", "Tarasova", 20, "markothh", "123123", autos[0]));
+	clients.Add(Client("Andrey", "Gorelov", 23, "andrey", "321123", autos[1]));
+	clients.Add(Client("Sergey", "Serov", 24, "sergey", "bjhjvgf", autos[2]));
+
+	employees.Add(Employee("Agata", "Belousova", 19, "agata", "irucm", "cashier"));
+	employees.Add(Employee("Victor", "Ovsyannikov", 26, "victor", "ujvr", "top-manager"));
+	employees.Add(Employee("Alisa", "Pavlova", 22, "alisa", "iuthmc", "manager"));
+}
 
 int printEmployees()
 {
 	cout << "Employees info:\n";
-	for (int i = 0; i < employeeCount; i++)
+	for (Employee employee : employees)
 	{
-		cout << employees[i] << endl;
+		cout << employee << endl;
 	}
 	return 0;
 };
@@ -32,9 +36,9 @@ int printEmployees()
 int printClients()
 {
 	cout << "Clients info:\n";
-	for (int i = 0; i < clientCount; i++)
+	for (Client client : clients)
 	{
-		cout << clients[i] << endl;
+		cout << client << endl;
 	}
 	return 0;
 };
@@ -45,8 +49,7 @@ int addEmployee()
 	cout << "Enter the employee info:\n";
 	cin >> employee;
 
-	employees[employeeCount] = employee;
-	employeeCount++;
+	employees.Add(employee);
 
 	return 0;
 }
@@ -59,7 +62,7 @@ int removeClient()
 	
 	int removeIndex = -1;
 
-	for (int i = 0; i < clientCount; i++)
+	for (int i = 0; i < clients.getSize(); i++)
 	{
 		if (clients[i] == client)
 		{
@@ -74,15 +77,8 @@ int removeClient()
 	}
 	else
 	{
-		for (int i = removeIndex; i < clientCount; i++)
-		{
-			clients[i] = clients[i + 1];
-		}
-
-		clients[clientCount] = Client();
-		clientCount--;
-
-		cout << "Client has been succesfully removed from the base.\n";
+		clients.Remove(removeIndex);
+		cout << "The client has been successfully removed.\n";
 	}
 
 	return 0;
@@ -90,31 +86,13 @@ int removeClient()
 
 int clientSort()
 {
-	for (int i = 0; i < clientCount; i++)
-	{
-		for (int j = 0; j < clientCount; j++)
-		{
-			if (clients[i] < clients[j])
-			{
-				swap(clients[i], clients[j]);
-			}
-		}
-	}
+	clients.SortBySurname();
 	return 0;
 }
 
 int employeeSort()
 {
-	for (int i = 0; i < employeeCount; i++)
-	{
-		for (int j = 0; j < employeeCount; j++)
-		{
-			if (employees[i] > employees[j])
-			{
-				swap(employees[i], employees[j]);
-			}
-		}
-	}
+	employees.SortBySurname();
 	return 0;
 }
 
@@ -135,6 +113,7 @@ int main()
 
 	MyMenu menu("My menu", items, MENU_COUNT);
 
+	init();
 
 	do
 	{
