@@ -72,7 +72,20 @@ namespace TSA
 		{
 			return 0;
 		}
-		return menuItems[lastSelect - 1].run();
+
+		try
+		{
+			if (lastSelect < 0 || lastSelect > itemCount)
+			{
+				throw runtime_error("An incorrect menu item number was entered!");
+			}
+
+			return menuItems[lastSelect - 1].run();
+		}
+		catch (exception e)
+		{
+			cerr << e.what() << endl;
+		}
 	}
 
 }

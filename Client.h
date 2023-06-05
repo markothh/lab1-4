@@ -16,6 +16,7 @@ namespace TSA
 		Client(string, string, int, string, string, Auto);
 
 		string getName();
+		string getLogin();
 
 		bool operator<(Client& client);
 		bool operator>(Client& client);

@@ -49,9 +49,18 @@ int addEmployee()
 {
 	Employee employee = Employee();
 	cout << "Enter the employee info:\n";
-	cin >> employee;
+	try
+	{
+		cin >> employee;
+		if (employee.getLogin() == "")
+			throw runtime_error("Invalid input! Try again.");
 
-	employees.Add(employee);
+		employees.Add(employee);
+	}
+	catch (exception e)
+	{
+		cerr << e.what() << endl;
+	}
 
 	return 0;
 }
@@ -60,27 +69,36 @@ int removeClient()
 {
 	Client client{};
 	cout << "Enter the client data:\n";
-	cin >> client;
-	
-	int removeIndex = -1;
-
-	for (int i = 0; i < clients.getSize(); i++)
+	try
 	{
-		if (clients[i] == client)
+		cin >> client;
+		if (client.getLogin() == "")
+			throw runtime_error("Invalid input! Try again.");
+
+		int removeIndex = -1;
+
+		for (int i = 0; i < clients.getSize(); i++)
 		{
-			removeIndex = i;
-			break;
+			if (clients[i] == client)
+			{
+				removeIndex = i;
+				break;
+			}
+		}
+
+		if (removeIndex == -1)
+		{
+			cout << "There is no client with such data in the base.\n";
+		}
+		else
+		{
+			clients.Remove(removeIndex);
+			cout << "The client has been successfully removed.\n";
 		}
 	}
-
-	if (removeIndex == -1)
+	catch (exception e)
 	{
-		cout << "There is no client with such data in the base.\n";
-	}
-	else
-	{
-		clients.Remove(removeIndex);
-		cout << "The client has been successfully removed.\n";
+		cerr << e.what() << endl;
 	}
 
 	return 0;

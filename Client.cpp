@@ -22,6 +22,11 @@ namespace TSA
 		return User::getName();
 	}
 
+	string Client::getLogin()
+	{
+		return this->login;
+	}
+
 	bool Client::operator<(Client& client)
 	{
 		return this->lastName < client.lastName;
@@ -55,20 +60,36 @@ namespace TSA
 
 	istream& operator>>(istream& in, Client& client)
 	{
-		cout << "Name: ";
-		in >> client.name;
-		cout << "Last name: ";
-		in >> client.lastName;
-		cout << "Age: ";
-		in >> client.age;
-		cout << "Login: ";
-		in >> client.login;
-		cout << "Password: ";
-		in >> client.pass;
-		cout << "Auto info:" << endl;
-		in >> client.automobile;
+		try
+		{
+			cout << "Name: ";
+			in >> client.name;
+			if (client.name.find_first_of("0123456789") != -1)
+				throw runtime_error("Name must not contain numbers");
+			cout << "Last name: ";
+			in >> client.lastName;
+			if (client.name.find_first_of("0123456789") != -1)
+				throw runtime_error("Last name must not contain numbers");
+			cout << "Age: ";
+			if ((in >> client.age).fail())
+				throw runtime_error("Age must be a number");
+			cout << "Login: ";
+			in >> client.login;
+			cout << "Password: ";
+			in >> client.pass;
+			cout << "Auto info:" << endl;
+			in >> client.automobile;
+			return in;
+		}
+		catch (exception e)
+		{
+			cerr << e.what() << endl;
+			in.clear();
+			in.ignore(255, '\n');
+			in.clear();
+			return in;
+		}
 
-		return in;
-
+		
 	}
 } 

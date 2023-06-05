@@ -16,6 +16,7 @@ namespace TSA
 		Employee(string, string, int, string, string, string);
 
 		string getName();
+		string getLogin();
 		
 		void setJob(string job);
 		string getJob();

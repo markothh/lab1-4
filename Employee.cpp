@@ -22,6 +22,11 @@ namespace TSA
 		return User::getName();
 	}
 
+	string Employee::getLogin()
+	{
+		return this->login;
+	}
+
 
 	string Employee::getJob()
 	{
@@ -66,18 +71,32 @@ namespace TSA
 
 	istream& operator>>(istream& in, Employee& employee)
 	{
-		cout << "Name: ";
-		in >> employee.name;
-		cout << "Last name: ";
-		in >> employee.lastName;
-		cout << "Age: ";
-		in >> employee.age;
-		cout << "Login: ";
-		in >> employee.login;
-		cout << "Password: ";
-		in >> employee.pass;
-		cout << "Job: ";
-		in >> employee.job;
+		try
+		{
+			cout << "Name: ";
+			in >> employee.name;
+			if (employee.name.find_first_of("0123456789") != -1)
+				throw runtime_error("Name must not contain numbers");
+			cout << "Last name: ";
+			in >> employee.lastName;
+			if (employee.name.find_first_of("0123456789") != -1)
+				throw runtime_error("Last name must not contain numbers");
+			cout << "Age: ";
+			if ((in >> employee.age).fail())
+				throw runtime_error("Age must be a number");
+			cout << "Login: ";
+			in >> employee.login;
+			cout << "Password: ";
+			in >> employee.pass;
+			cout << "Job: ";
+			in >> employee.job;
+		}
+		catch (exception e)
+		{
+			cerr << e.what() << endl;
+			in.clear();
+			in.ignore(255, '\n');
+		}
 
 		return in;
 
